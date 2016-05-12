@@ -4,7 +4,7 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-atelierlakeside
+colorscheme base16-pop
 
 " ---------------
 " UI
@@ -63,8 +63,6 @@ let g:buffergator_viewport_split_policy = "T"
 
 " custom command
 :command JSON %!python -m json.tool
-
-nmap ,f :FZF
 
 " Syntastic
 " http://jshint.com/

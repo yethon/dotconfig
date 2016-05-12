@@ -18,6 +18,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -25,10 +29,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'elzr/vim-json'
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'elzr/vim-json'
+Plugin 'chrisbra/csv.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jeetsukumaran/vim-buffergator'
@@ -40,9 +45,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'atelierbram/vim-colors_duotones'
+" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plugin 'junegunn/fzf.vim'
 
 " TODO: Remove the snippets you'll never use
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -61,5 +66,3 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
-
-" Font configuration

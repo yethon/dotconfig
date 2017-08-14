@@ -4,7 +4,10 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-pop
+" colorscheme base16-chalk
+colorscheme base16-unikitty-dark
+" colorscheme base16-harmonic
+" colorscheme base16-atelier-sulphurpool
 
 " ---------------
 " UI
@@ -50,12 +53,12 @@ nnoremap <leader>fef :normal! gg=G``<CR>
 " move between splits with CTRL + j, k, l, h
 " https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 noremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H> " STOOOOPID : https://github.com/neovim/neovim/issues/2048
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H> " STOOOOPID : https://github.com/neovim/neovim/issues/2048
 
-nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
-nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>]'"
+noremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
+noremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>]'"
 
 " vim-buffergator
 " https://github.com/jeetsukumaran/vim-buffergator
@@ -65,5 +68,34 @@ let g:buffergator_viewport_split_policy = "T"
 :command JSON %!python -m json.tool
 
 " Syntastic
-" http://jshint.com/
-let g:syntastic_javascript_checkers = ['jshint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+" Override eslint with local version where necessary.
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+  let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+  let g:syntastic_javascript_eslint_exec = local_eslint
+endif
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn

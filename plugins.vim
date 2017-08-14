@@ -46,8 +46,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 Plugin 'airblade/vim-gitgutter'
 Plugin 'atelierbram/vim-colors_duotones'
-" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plugin 'junegunn/fzf.vim'
+Plugin 'hauleth/sad.vim'
+Plugin 'isRuslan/vim-es6'
+Plugin 'smancill/darkglass'
+Plugin 'leafgarland/typescript-vim'
 
 " TODO: Remove the snippets you'll never use
 Plugin 'MarcWeber/vim-addon-mw-utils'

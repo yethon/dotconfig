@@ -38,6 +38,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'numkil/ag.nvim' " brew install the_silver_searcher
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'

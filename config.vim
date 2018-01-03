@@ -1,13 +1,21 @@
 " ---------------
 " Color
 " ---------------
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"
+" Set the background theme to dark
 set background=dark
-let base16colorspace=256  " Access colors present in 256 colorspace
-" colorscheme base16-chalk
-colorscheme base16-unikitty-dark
+
+" Call the theme one
+" colorscheme base16-unikitty-dark
+" colorscheme base16-unikitty-dark
 " colorscheme base16-harmonic
-" colorscheme base16-atelier-sulphurpool
+colorscheme base16-atelier-sulphurpool
+
+" Don't forget set the airline theme as well.
+" let g:airline_theme = 'one'
+
+" Note, the above line is ignored in Neovim 0.1.5 above, use this line instead.
+set termguicolors
 
 " ---------------
 " UI

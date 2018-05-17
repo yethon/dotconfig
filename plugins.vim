@@ -1,72 +1,66 @@
+" https://github.com/junegunn/vim-plug
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'chriskempson/base16-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'pangloss/vim-javascript'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'elzr/vim-json'
-Plugin 'chrisbra/csv.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'ervandew/supertab'
-Plugin 'Raimondi/delimitMate'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'numkil/ag.nvim' " brew install the_silver_searcher
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
-Plugin 'airblade/vim-gitgutter'
-Plugin 'atelierbram/vim-colors_duotones'
-Plugin 'hauleth/sad.vim'
-Plugin 'isRuslan/vim-es6'
-Plugin 'smancill/darkglass'
-Plugin 'leafgarland/typescript-vim'
+Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'chriskempson/base16-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
+" Plug 'pangloss/vim-javascript'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'hail2u/vim-css3-syntax'
+" Plug 'mustache/vim-mustache-handlebars'
+" Plug 'elzr/vim-json'
+" Plug 'chrisbra/csv.vim'
+" Plug 'elixir-lang/vim-elixir'
+" Plug 'Raimondi/delimitMate'
+Plug 'easymotion/vim-easymotion'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'numkil/ag.nvim' " brew install the_silver_searcher
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'bronson/vim-trailing-whitespace'
+" Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+Plug 'airblade/vim-gitgutter'
+" HUZZZA WUH????
+Plug 'brooth/far.vim'
+Plug 'neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
+
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mattn/emmet-vim'
+
+" Plug 'atelierbram/vim-colors_duotones'
+" Plug 'isRuslan/vim-es6'
+" Plug 'smancill/darkglass'
+" Plug 'leafgarland/typescript-vim'
 
 " TODO: Remove the snippets you'll never use
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
+"
 
-" Optional:
-Plugin 'honza/vim-snippets'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
